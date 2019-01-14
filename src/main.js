@@ -4,7 +4,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Population } from './population.js';
 // import { Disease } from './disease.js';
-import { Game } from './game.js'
+import { Game } from './game.js';
 
 $(document).ready(function() {
   let game = new Game(1000);

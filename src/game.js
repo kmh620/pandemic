@@ -1,5 +1,5 @@
 import { Disease } from './disease.js';
-import { City } from './city.js'
+import { City } from './city.js';
 
 export class Game {
   constructor(totalPop){
@@ -14,6 +14,8 @@ export class Game {
     disease.diseaseType();
     console.log(disease);
     this.generateCities(4, disease);
+    this._breakoutCheck();
+    this.cities[0].infected = true;
   }
 
   generateCities(amount, disease) {
@@ -23,4 +25,13 @@ export class Game {
     }
     console.log(this);
   }
+
+  _breakoutCheck() {
+    setInterval(() => {
+      this.cities.forEach((city) => {
+        city._breakOut();
+      });
+    },1000);
+  }
+
 }

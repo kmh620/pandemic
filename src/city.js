@@ -5,8 +5,17 @@ export class City extends Population {
     super(healthyPop, disease, infectionRate, mortalityRate);
     this.healthyPop = healthyPop/cityNum;
     this.name = name;
-    this.researchStation;
-    this.quarantine;
+    this.infected = false;
+    this.researchStation = 0;
+    this.quarantine = false;
+  }
+
+  _breakOut() {
+    if (this.infected === true) {
+      if (this.sickPop < 1) {
+        this.infection();
+      }
+    }
   }
 
 
