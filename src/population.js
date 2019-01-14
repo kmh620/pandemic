@@ -15,6 +15,7 @@ export class Population {
         clearInterval(transmission);
       }
     }, this.atRiskFor.disease.infectionRate);
+
     let fatality = setInterval(() => {
       this.sickPop--;
       this.deadPop++;

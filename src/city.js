@@ -1,13 +1,13 @@
 import { Population } from './population.js';
-import { Disease } from './disease.js';
-
 
 export class City extends Population {
-  constructor(totalPop){
-    super();
-    this.healthyPop = totalPop / 4;
-    this.name;
+  constructor(name, healthyPop, disease, infectionRate, mortalityRate, cityNum){
+    super(healthyPop, disease, infectionRate, mortalityRate);
+    this.healthyPop = healthyPop/cityNum;
+    this.name = name;
     this.researchStation;
     this.quarantine;
   }
+
+
 }
