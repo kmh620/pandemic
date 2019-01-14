@@ -5,6 +5,7 @@ export class Disease {
     this.type = type;
     this.infectionRate;
     this.mortalityRate;
+    this.lastCityInfected = 0;
   }
 
   diseaseType() {

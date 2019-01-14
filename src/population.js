@@ -10,7 +10,6 @@ export class Population {
     let transmission = setInterval(() => {
       this.healthyPop--;
       this.sickPop++;
-      console.log(this.healthyPop, this.sickPop);
       if (this.healthyPop === 0) {
         clearInterval(transmission);
       }
@@ -19,7 +18,6 @@ export class Population {
     let fatality = setInterval(() => {
       this.sickPop--;
       this.deadPop++;
-      console.log(this.sickPop, this.deadPop);
       if (this.sickPop === 0) {
         clearInterval(fatality);
       }
