@@ -1,18 +1,22 @@
 export class Player {
-  constructor() {
+  constructor(deck) {
+    let playerDeck = deck
     this.role;
     this.hand = [];
     this.turns;
     this.action;
+    this.deck = playerDeck;
   }
 
-  drawCard(deck) {
-    if (this.hand.length <= 3) {
-      let card = Math.floor((Math.random() * 13) + 1)
-      console.log(card);
-      console.log(deck);
-      this.hand.push(deck[card]);
-    }
+  drawCard() {
+    this.deck.push("hello")
+    let card = Math.floor((Math.random() * this.deck.length) + 1)
+    if (!(this.deck[card] === '')) {
+      if (this.hand.length < 4) {
+        this.hand.push(this.deck[card]);
+        this.drawCard();
+      } else return this.deck[card];
+    } else this.drawCard();
   }
 
   // addResearchPoints() {
@@ -20,19 +24,20 @@ export class Player {
   // }
 
   playCard(card) {
-    // let playBank = ['gain1Scientist', 'lose1Scientist', 'diseaseMutation', 'loseReasearchStation']
-    // if (card === playBank[0]) {
-    this.action = card
+
+    this.action = card;
+
+
     //this.turns +1 ?? to calculate how many actions taken per turn, max 4??
     // }
   }
-  //
-  // playBuildResearchCenter() {
-  //
-  //   this.action =
-  //
-  // }
-  //
+
+  playBuildResearchCenter(buildRC) {
+
+    this.action = buildRC;
+
+  }
+
   // playAssignScientist() {
   //
   //   this.action =

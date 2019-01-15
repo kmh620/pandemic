@@ -13,7 +13,7 @@ export class City extends Population {
 
   _breakOut() {
     if (this.infected === true) {
-      if (this.sickPop < 1) {
+      if (this.sickPop < 1 && this.healthyPop > 0) {
         this.infection();
       }
     }

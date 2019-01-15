@@ -15,12 +15,42 @@
   text-align: center;
 }
 
-#healthy-pop {
+#healthy-pop1 {
   background-color: #67FFFD;
 }
-#sick-pop {
+#sick-pop1 {
   background-color: #469615;
 }
-#dead-pop {
+#dead-pop1 {
+  background-color: #ff0707;
+}
+
+#healthy-pop2 {
+  background-color: #67FFFD;
+}
+#sick-pop2 {
+  background-color: #469615;
+}
+#dead-pop2 {
+  background-color: #ff0707;
+}
+
+#healthy-pop3 {
+  background-color: #67FFFD;
+}
+#sick-pop3 {
+  background-color: #469615;
+}
+#dead-pop3 {
+  background-color: #ff0707;
+}
+
+#healthy-pop4 {
+  background-color: #67FFFD;
+}
+#sick-pop4 {
+  background-color: #469615;
+}
+#dead-pop4 {
   background-color: #ff0707;
 }
