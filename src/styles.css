@@ -1,12 +1,9 @@
-/* body {
-  background-color: #7FDBFF;
-} */
 
 .player {
   margin: auto;
   margin-top: 50px;
   padding: 50px;
-  background: #403742;
+  background: #7f7f7f;
 }
 
 .card {

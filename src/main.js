@@ -34,12 +34,9 @@ console.log(game.player.hand);
   $('#card-three').text(game.player.hand[2]);
   $('#card-four').text(game.player.hand[3]);
 
-  // ui_cityProgress(){
-  //
-  //   $("#healthy-pop").css("width", );
-  //
-  // }
-
+   // $("button#play-one").click(function(event) {
+   //   game.player.playCard();
+   // }
 
 
 

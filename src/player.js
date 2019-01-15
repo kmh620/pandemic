@@ -16,23 +16,24 @@ export class Player {
   }
 
   // addResearchPoints() {
-  //
+  //  game.researchPoints + ??(researchcards total)
   // }
 
   playCard(card) {
     // let playBank = ['gain1Scientist', 'lose1Scientist', 'diseaseMutation', 'loseReasearchStation']
     // if (card === playBank[0]) {
     this.action = card
+    //this.turns +1 ?? to calculate how many actions taken per turn, max 4??
     // }
   }
   //
-  // play() {
+  // playBuildResearchCenter() {
   //
   //   this.action =
   //
   // }
   //
-  // play() {
+  // playAssignScientist() {
   //
   //   this.action =
   //
