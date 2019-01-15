@@ -65,44 +65,56 @@ console.log(game.player.hand);
   }, 100);
 
 
-
-
-
   $('#card-one').text(game.player.hand[0]);
   $('#card-two').text(game.player.hand[1]);
   $('#card-three').text(game.player.hand[2]);
   $('#card-four').text(game.player.hand[3]);
 
-   $("button#play-one").click(function(event) {
-     console.log(event);
 
-     game.playerAction(game.player.hand[0]);
-     console.log(game.player.hand[0]);
-     console.log(game.player.deck);
-     console.log(game.cardDeck);
-     console.log(game.player.deck.length);
-    game.player.deck[(game.player.deck.indexOf(game.player.hand[0]))] = '';
-     console.log(game.player.deck.length);
-     game.player.hand[0] = game.player.drawCard();
-     $('#card-one').text(game.player.hand[0]);
-  })
+    $("button#play-one").click(function(event) {
+      console.log(event);
+      game.playerAction(game.player.hand[0]);
+      game.player.deck[(game.player.deck.indexOf(game.player.hand[0]))] = '';
+      game.player.hand[0] = game.player.drawCard();
+      $('#card-one').text(game.player.hand[0]);
+    })
 
-   $("button#play-two").click(function(event) {
-     game.playerAction(game.player.hand[1]);
-     console.log(event);
-   })
+    $("button#play-two").click(function(event) {
+      game.playerAction(game.player.hand[1]);
+      console.log(event);
+      game.player.deck[(game.player.deck.indexOf(game.player.hand[1]))] = '';
+      game.player.hand[1] = game.player.drawCard();
+      $('#card-two').text(game.player.hand[1]);
+    })
 
-   $("button#play-three").click(function(event) {
-     game.playerAction(game.player.hand[2]);
-     console.log(event);
-   })
+    $("button#play-three").click(function(event) {
+      game.playerAction(game.player.hand[2]);
+      console.log(event);
+      game.player.deck[(game.player.deck.indexOf(game.player.hand[2]))] = '';
+      game.player.hand[2] = game.player.drawCard();
+      $('#card-three').text(game.player.hand[2]);
+    })
 
-   $("button#play-four").click(function(event) {
-    game.playerAction(game.player.hand[3]);
-     console.log(event);
-   })
+    $("button#play-four").click(function(event) {
+      game.playerAction(game.player.hand[3]);
+      console.log(event);
+      game.player.deck[(game.player.deck.indexOf(game.player.hand[3]))] = '';
+      game.player.hand[3] = game.player.drawCard();
+      $('#card-four').text(game.player.hand[3]);
+    })
+
 
    $("button#build-rc").click(function(event) {
+    game.playerAction(this.value)
+     console.log(event);
+   })
+
+   $("button#cure").click(function(event) {
+    game.playerAction(this.value)
+     console.log(event);
+   })
+
+   $("button#quarantine").click(function(event) {
     game.playerAction(this.value)
      console.log(event);
    })

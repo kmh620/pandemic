@@ -19,7 +19,20 @@ export class City extends Population {
     }
   }
 
-
+  // _researchStation() {
+  //
+  //   if(this.researchStation <= 3) {
+  //     this.researchStation += 1;
+  //   }
+  //
+  // }
+  //
+  // _cityScientist() {
+  //
+  //   if(this.researchStation >= 1 && this.scientists ){
+  //     this.scientists += 1;
+  //   }
+  // }
 
 
 }

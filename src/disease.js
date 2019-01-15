@@ -18,6 +18,7 @@ export class Disease {
     return this.type, this.infectionRate, this.mortalityRate;
   }
 
+  
 
 
 
