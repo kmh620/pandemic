@@ -4,12 +4,13 @@ import { Player } from './player.js';
 
 export class Game {
   constructor(totalPop){
+    this.player;
     this.totalPop = totalPop;
     this.cities = [];
     this.diseases;
     this.researchPoints = 0;
     // this.cardDeck = {researchPointCards:{value:[1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,1,2,3,4,5]}, scientistCards:{gainScientist:[1,1,1,1,2]}, consequenceCards:{loseScientist:[1,1,1], diseaseMutation:[1,2,3], loseReasearchStation:[1]}};
-    this.cardDeck = {1:'research+1',2:'research+1',3:'research+1',4:'research+1',5:'research+1',6:'gain1Scientist',7:'gain1Scientist',8:'gain1Scientist',9:'gain1Scientist',10:'lose1Scientist',11:'lose1Scientist',12:'diseaseMutation',13:'loseReasearchStation'};
+    this.cardDeck = {1:'research+1',2:'research+1',3:'research+1',4:'research+1',5:'research+1', 14:'research+1',15:'research+1',16:'research+1',17:'research+1',18:'research+1', 19:'research+1',20:'research+1',21:'research+1',22:'research+1',23:'research+1', 24:'research+1',25:'research+1',26:'research+1',27:'research+1',28:'research+1', 6:'gain1Scientist',7:'gain1Scientist',8:'gain1Scientist',9:'gain1Scientist',10:'lose1Scientist',11:'lose1Scientist',12:'diseaseMutation',13:'loseReasearchStation'};
 
     // this.cardDeckTest = {Rcards:{value:[1,2,3,4]}}
     // console.log(this.cardDeckTest);
@@ -17,16 +18,20 @@ export class Game {
 
 
   startGame() {
-    let player = new Player();
-    console.log(player);
+    this.player = new Player();
+    console.log(this.player);
     let disease = new Disease('Ebola');
     disease.diseaseType();
     console.log(disease);
     this.generateCities(4, disease);
+    this.cities[0].infected = true;
     this._breakoutCheck();
     this.diseaseSpread(disease);
-    player.drawCard(this.cardDeck);
-    console.log(player.hand);
+    this.player.drawCard(this.cardDeck);
+    this.player.drawCard(this.cardDeck);
+    this.player.drawCard(this.cardDeck);
+    this.player.drawCard(this.cardDeck);
+    console.log(this.player.hand);
     // this.cities[0].infected = true;
   }
 
@@ -46,6 +51,16 @@ export class Game {
     },1000);
   }
 
+  _actionCheck(city) {
+    console.log(city);
+    let actionBank = ['gain1Scientist', 'lose1Scientist', 'diseaseMutation', 'loseReasearchStation'];
+    setInterval(() => {
+      if (this.player.action === actionBank[0]) {
+        this.cites[0].scientists++;
+      }
+    },1000);
+  }
+
   diseaseSpread(disease) {
     setInterval(() => {
       this.cities.forEach((city) => {
@@ -61,6 +76,16 @@ export class Game {
       });
     }, 5000);
   }
+
+  returnPopulations() {
+    let citiesInfo = [];
+    this.cities.forEach((city) => {
+      let cityInfo = [city.name, city.healthyPop, city.sickPop, city.deadPop];
+        citiesInfo.push(cityInfo);
+    })
+    return citiesInfo;
+  }
+
 
   // _parseDeck() {
   //   let parsedDeck = [];

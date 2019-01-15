@@ -1,9 +1,59 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Template</title>
+    <title>Pandemic</title>
   </head>
   <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Pandemic</h1>
+      </div>
 
+      <div class="game-play">
+        <div class="city">
+          <h2 id="city-name"></h2>
+          <h3>Healthy Population</h3>
+           <div id="healthy"></div>
+          <div class="progress" style="height: 10px;">
+            <div class="progress-bar  progress-bar-striped progress-bar-animated" id="healthy-pop" role="progressbar" ></div>
+          </div>
+
+          <h3>Sick Population</h3>
+           <div id="sick"></div>
+          <div class="progress" style="height: 10px;">
+            <div class="progress-bar  progress-bar-striped progress-bar-animated" id="sick-pop" role="progressbar"></div>
+          </div>
+
+          <h3>Total Dead</h3>
+           <div id="dead"></div>
+            <div class="progress" style="height: 10px;">
+              <div class="progress-bar  progress-bar-striped progress-bar-animated" id="dead-pop" role="progressbar" ></div>
+            </div>
+        </div>
+      </div>
+
+      <div class="player">
+        <div class="player-hand">
+            <div class="card">
+              <div id="card-one"></div>
+              <button id="play-one" type="button" name="button">Play</button>
+            </div>
+            <div class="card">
+              <div id="card-two"></div>
+              <button id="play-two" type="button" name="button">Play</button>
+            </div>
+            <div class="card">
+              <div id="card-three"></div>
+              <button id="play-three" type="button" name="button">Play</button>
+            </div>
+            <div class="card">
+              <div id="card-four"></div>
+              <button id="play-four" type="button" name="button">Play</button>
+            </div>
+        </div>
+      </div>
+
+
+    </div>
   </body>
 </html>

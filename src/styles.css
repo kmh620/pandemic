@@ -1,3 +1,29 @@
-body {
+/* body {
   background-color: #7FDBFF;
+} */
+
+.player {
+  margin: auto;
+  margin-top: 50px;
+  padding: 50px;
+  background: #403742;
+}
+
+.card {
+  margin: 5px;
+  width: 115px;
+  height: 140px;
+  background: #e5d0b3;
+  font-size: 12px;
+  text-align: center;
+}
+
+#healthy-pop {
+  background-color: #67FFFD;
+}
+#sick-pop {
+  background-color: #469615;
+}
+#dead-pop {
+  background-color: #ff0707;
 }

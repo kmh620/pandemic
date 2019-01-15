@@ -7,6 +7,7 @@ export class City extends Population {
     this.name = name;
     this.infected = false;
     this.researchStation = 0;
+    this.scientists = 0;
     this.quarantine = false;
   }
 
@@ -17,6 +18,8 @@ export class City extends Population {
       }
     }
   }
+
+
 
 
 }
