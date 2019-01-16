@@ -21,12 +21,12 @@ export class City extends Population {
 
   // _researchStation() {
   //
-  //   if(this.researchStation <= 3) {
-  //     this.researchStation += 1;
+  //   if(this.researchStation > 0) {
+  //
   //   }
   //
   // }
-  //
+
   // _cityScientist() {
   //
   //   if(this.researchStation >= 1 && this.scientists ){

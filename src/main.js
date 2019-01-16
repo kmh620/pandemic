@@ -10,20 +10,29 @@ $(document).ready(function() {
   let game = new Game(1000);
   game.startGame();
 
-console.log(game.player.hand);
+  game._researchStation();
+  game._cityScientist();
 
   let viewInfo = game.returnPopulations();
-  $('#city-name1').text(viewInfo[0][0]);
+
   let begPop = viewInfo[0][1];
-  $('#city-name2').text(viewInfo[1][0]);
   let begPop2 = viewInfo[1][1];
-  $('#city-name3').text(viewInfo[2][0]);
   let begPop3 = viewInfo[2][1];
-  $('#city-name4').text(viewInfo[3][0]);
   let begPop4 = viewInfo[3][1];
 
   setInterval(() => {
+    $('#research-points').text(game.researchPoints);
     let viewInfo = game.returnPopulations();
+    $('#city-name1').text(viewInfo[0][0]);
+    $('#research-centers1').text(game.researchStation);
+    $('#scientists1').text(game.scientists);
+    $('#city-name2').text(viewInfo[1][0]);
+
+    $('#city-name3').text(viewInfo[2][0]);
+
+    $('#city-name4').text(viewInfo[3][0]);
+
+
     $('#healthy1').text(viewInfo[0][1]);
     let healthyBar = Math.floor((viewInfo[0][1]/begPop)*100);
     $("#healthy-pop1").css("width", healthyBar +"%");
@@ -120,11 +129,4 @@ console.log(game.player.hand);
    })
 
 
-
-
-  // let disease = new Disease('Ebola');
-  // disease.diseaseType();
-  // let pop = new Population(1000, disease.type, disease.infectionRate, disease.mortalityRate);
-  // console.log(pop);
-  // pop.infection();
 });

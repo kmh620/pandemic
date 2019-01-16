@@ -74,7 +74,7 @@ export class Game {
   returnPopulations() {
     let citiesInfo = [];
     this.cities.forEach((city) => {
-      let cityInfo = [city.name, city.healthyPop, city.sickPop, city.deadPop, city.quarantine];
+      let cityInfo = [city.name, city.healthyPop, city.sickPop, city.deadPop, city.quarantine, city.researchStation, city.scientists];
         citiesInfo.push(cityInfo);
     })
     return citiesInfo;
@@ -95,23 +95,24 @@ export class Game {
         this.researchStation--;
       }
     } else if (action === 'diseaseMutation') {
-
       if (Math.floor((Math.random() * 10) <= 5)) {
         this.disease.infectionRate -= 25;
       } else {
         this.disease.mortalityRate += 50;
       }
-
     } else if (action === "buildRC") {
-        if(this.researchPoints >= 50) {
-          // coose city to assign _researchStation();
-          this.researchStation ++;
-          this.researchPoints -= 50;
-        } else {
+        if(this.researchPoints >= 15) {
+          this.researchPoints -= 15;
+          // cities.forEach(city) => {
+
+            // coose city to assign _researchStation();
+            this.researchStation++;
+          } else {
           console.log('You need 50 research points to build a Research Center!');
         }
   } else if (action === "quarantine") {
-     if(this.researchPoints >= 100) {
+     // if (this.researchPoints >= 100) {
+     //   console.log("quarantine")
     //       //select infected city to quarantine, stop healthypop from this/ other? cities from getting sick
     //       this.researchPoints -= 100;
     //
@@ -119,9 +120,9 @@ export class Game {
     //     this.city.quarantine === true;
     //   }, 10000);
     //
-     } else {
-      console.log('You need 100 research points to Quarantine a City!');
-     }
+     // } else {
+     //  console.log('You need 100 research points to Quarantine a City!');
+     // }
 
   } else if (action === "cure") {
     if(this.researchPoints >= 10000){
@@ -130,9 +131,33 @@ export class Game {
       console.log("You need 10000 research points to Cure Disease!");
     }
 
+  } else {
+    console.log("hi");
+  }
+  console.log(this.researchPoints);
+  }
+
+
+  _researchStation() {
+    if(this.researchStation > 0) {
+      setInterval(() => {
+        this.researchPoints += 1;
+      }, 1000);
     }
   }
 
+  _cityScientist() {
+    let test = setInterval(() => {
+      if(this.scientists > 0) {
+        setInterval(() => {
+          this.researchPoints += 1;
+          clearInterval(test);
+        }, 5000);
+      }
+    }, 100);
+
+
+  }
   // quarantineCity() {
   //
   //
